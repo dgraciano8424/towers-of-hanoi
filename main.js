@@ -17,6 +17,25 @@ let gameMaster = {
 
     // * value of starting peg top disc
     let topDisc = startingPeg[startingPeg.length - 1];
+console.log("file loaded");
+let gameMaster = {
+  board: [[5, 4, 3, 2, 1], [], []],
+
+  resetBoard() {
+    this.board = this.board.map((peg, index) =>
+      index === 0 ? [5, 4, 3, 2, 1] : [],
+    );
+  },
+
+  discMove(startingPegIndex, endingPegIndex) {
+    // * Players choice of which peg to start on.
+    let startingPeg = this.board[startingPegIndex];
+
+    // * Players choice of which peg to end on.
+    let endingPeg = this.board[endingPegIndex];
+
+    // * value of starting peg top disc
+    let topDisc = startingPeg[startingPeg.length - 1];
 
     // * value of ending peg top disc
     let endingPegTopDiscValue = endingPeg[endingPeg.length - 1];
